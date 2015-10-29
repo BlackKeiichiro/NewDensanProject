@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: d30c7b37b9bd94d07ba7385cd2f46307
+timeCreated: 1440418298
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bottomnurbsSquare1
+    100004: bottomnurbsSquare2
+    100006: Char_L_1
+    100008: Char_R_1
+    100010: cockpit
+    100012: conect01
+    100014: control_boll
+    100016: curve1
+    100018: curve2
+    100020: curve3
+    100022: front
+    100024: gun1
+    100026: handle
+    100028: handle_ball
+    100030: joint15
+    100032: joint16
+    100034: joint17
+    100036: joint18
+    100038: joint19
+    100040: joint20
+    100042: joint21
+    100044: joint22
+    100046: joint23
+    100048: joint24
+    100050: L_foot
+    100052: L_S_arm01
+    100054: L_S_arm02
+    100056: L_S_arm03
+    100058: L_S_armend
+    100060: L_sild
+    100062: L_taiya
+    100064: leftnurbsSquare1
+    100066: leftnurbsSquare2
+    100068: nurbsCircle1
+    100070: pCylinder1
+    100072: pCylinder35
+    100074: polySurface13
+    100076: polySurface14
+    100078: polySurface18
+    100080: polySurface22
+    100082: polySurface43
+    100084: polySurface44
+    100086: polySurface45
+    100088: polySurface5
+    100090: polySurface51
+    100092: polySurface51 1
+    100094: polySurface52
+    100096: polySurface52 1
+    100098: polySurface53
+    100100: polySurface53 1
+    100102: polySurface54
+    100104: polySurface55
+    100106: polySurface56
+    100108: polySurface57
+    100110: polySurface58
+    100112: polySurface60
+    100114: polySurface61
+    100116: polySurface8
+    100118: pPlane14
+    100120: pPlane19
+    100122: pPlane19 1
+    100124: pPlane30
+    100126: pPlane7
+    100128: R_foot
+    100130: R_S_arm01
+    100132: R_S_arm02
+    100134: R_S_arm03
+    100136: R_S_armend
+    100138: R_shild
+    100140: R_taiya
+    100142: rightnurbsSquare1
+    100144: taiya_conect
+    100146: Text_L_1
+    100148: Text_R_1
+    100150: topnurbsSquare1
+    100152: topnurbsSquare2
+    400000: //RootNode
+    400002: bottomnurbsSquare1
+    400004: bottomnurbsSquare2
+    400006: Char_L_1
+    400008: Char_R_1
+    400010: cockpit
+    400012: conect01
+    400014: control_boll
+    400016: curve1
+    400018: curve2
+    400020: curve3
+    400022: front
+    400024: gun1
+    400026: handle
+    400028: handle_ball
+    400030: joint15
+    400032: joint16
+    400034: joint17
+    400036: joint18
+    400038: joint19
+    400040: joint20
+    400042: joint21
+    400044: joint22
+    400046: joint23
+    400048: joint24
+    400050: L_foot
+    400052: L_S_arm01
+    400054: L_S_arm02
+    400056: L_S_arm03
+    400058: L_S_armend
+    400060: L_sild
+    400062: L_taiya
+    400064: leftnurbsSquare1
+    400066: leftnurbsSquare2
+    400068: nurbsCircle1
+    400070: pCylinder1
+    400072: pCylinder35
+    400074: polySurface13
+    400076: polySurface14
+    400078: polySurface18
+    400080: polySurface22
+    400082: polySurface43
+    400084: polySurface44
+    400086: polySurface45
+    400088: polySurface5
+    400090: polySurface51
+    400092: polySurface51 1
+    400094: polySurface52
+    400096: polySurface52 1
+    400098: polySurface53
+    400100: polySurface53 1
+    400102: polySurface54
+    400104: polySurface55
+    400106: polySurface56
+    400108: polySurface57
+    400110: polySurface58
+    400112: polySurface60
+    400114: polySurface61
+    400116: polySurface8
+    400118: pPlane14
+    400120: pPlane19
+    400122: pPlane19 1
+    400124: pPlane30
+    400126: pPlane7
+    400128: R_foot
+    400130: R_S_arm01
+    400132: R_S_arm02
+    400134: R_S_arm03
+    400136: R_S_armend
+    400138: R_shild
+    400140: R_taiya
+    400142: rightnurbsSquare1
+    400144: taiya_conect
+    400146: Text_L_1
+    400148: Text_R_1
+    400150: topnurbsSquare1
+    400152: topnurbsSquare2
+    2300000: gun1
+    2300002: pCylinder1
+    2300004: pCylinder35
+    2300006: polySurface13
+    2300008: polySurface14
+    2300010: polySurface18
+    2300012: polySurface22
+    2300014: polySurface43
+    2300016: polySurface44
+    2300018: polySurface45
+    2300020: polySurface5
+    2300022: polySurface51
+    2300024: polySurface51 1
+    2300026: polySurface52
+    2300028: polySurface52 1
+    2300030: polySurface53
+    2300032: polySurface53 1
+    2300034: polySurface54
+    2300036: polySurface55
+    2300038: polySurface57
+    2300040: polySurface58
+    2300042: polySurface60
+    2300044: polySurface61
+    2300046: polySurface8
+    2300048: pPlane14
+    2300050: pPlane19
+    2300052: pPlane19 1
+    2300054: pPlane30
+    2300056: pPlane7
+    3300000: gun1
+    3300002: pCylinder1
+    3300004: pCylinder35
+    3300006: polySurface13
+    3300008: polySurface14
+    3300010: polySurface18
+    3300012: polySurface22
+    3300014: polySurface43
+    3300016: polySurface44
+    3300018: polySurface45
+    3300020: polySurface5
+    3300022: polySurface51
+    3300024: polySurface51 1
+    3300026: polySurface52
+    3300028: polySurface52 1
+    3300030: polySurface53
+    3300032: polySurface53 1
+    3300034: polySurface54
+    3300036: polySurface55
+    3300038: polySurface57
+    3300040: polySurface58
+    3300042: polySurface60
+    3300044: polySurface61
+    3300046: polySurface8
+    3300048: pPlane14
+    3300050: pPlane19
+    3300052: pPlane19 1
+    3300054: pPlane30
+    3300056: pPlane7
+    4300000: pPlane7
+    4300002: pPlane14
+    4300004: pCylinder1
+    4300006: polySurface5
+    4300008: polySurface8
+    4300010: polySurface14
+    4300012: polySurface18
+    4300014: polySurface57
+    4300016: polySurface51
+    4300018: pPlane19
+    4300020: polySurface52
+    4300022: polySurface53
+    4300024: polySurface51
+    4300026: polySurface55
+    4300028: polySurface54
+    4300030: polySurface44
+    4300032: polySurface43
+    4300034: pPlane19
+    4300036: polySurface52
+    4300038: polySurface53
+    4300040: gun1
+    4300042: polySurface60
+    4300044: polySurface61
+    4300046: polySurface22
+    4300048: pPlane30
+    4300050: polySurface13
+    4300052: polySurface58
+    4300054: polySurface45
+    4300056: pCylinder35
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
