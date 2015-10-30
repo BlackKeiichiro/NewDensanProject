@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour {
 	private GameObject bike;
 	// Use this for initialization
 	void Start () {
-		bike = this.transform.FindChild("Bike_fix").gameObject;
+		bike = this.transform.FindChild("Bike").gameObject;
 		bike_anim = bike.GetComponent<Animator>();
         center = new Vector3(0,-3.8f,0);
 	}
@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour {
 		float h = Input.GetAxis("Horizontal");
 		bike_anim.SetFloat("key",h);
         if (h > 0.1 || h < -0.1)
-			moveDistace = h * Time.deltaTime * 10;
+			moveDistace = h * Time.deltaTime * 15;
 
 		playerX -= moveDistace;
 		angle += speed * Time.deltaTime % 360;
