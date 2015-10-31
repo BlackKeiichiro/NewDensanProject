@@ -8,7 +8,7 @@ public class Count : MonoBehaviour {
 	private Text escape_ui;
 	private float dcount = 0.0f;
 	private float esc_count;
-	private float[] esc_counts = new float[3]{100,160,220};
+	private float[] esc_counts = new float[3]{10,160,220};
 	private bool finish_flag = false;
 	private GameObject manager;
 	private ItemManager item_manager;
@@ -36,7 +36,7 @@ public class Count : MonoBehaviour {
 				PlayerPrefs.SetInt("Grade",item_manager.Grage);
 				PlayerPrefs.SetInt("Stage",item_manager.StageLevel);
 				Instantiate(Resources.Load("Prefabs/EyeCatch/EyeCatchObj"));
-				Application.LoadLevel("GameMain_partB_2_copy");
+				Application.LoadLevel("GameMain_partB_2");
 			}
 			escape_ui.text = string.Format("{0:N}\r\n",esc_count).ToString();
 		}

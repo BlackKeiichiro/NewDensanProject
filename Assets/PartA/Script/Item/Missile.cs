@@ -4,12 +4,17 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Missile : MonoBehaviour {
 	private GameObject explstnAOE;
+	private GameObject SEobj;
 	private Rigidbody _rigidbody;
 	private float speed = 20;
+	private AudioClip missileSE;
 	// Use this for initialization
 	void Start () {
 		_rigidbody = this.GetComponent<Rigidbody>();
-	}
+		missileSE = Resources.Load("Sound/bomb_fall") as AudioClip;
+		SEobj = AudioSource.Instantiate(missileSE,this.transform.position,this.transform.rotation) as GameObject;
+		SEobj.transform.parent = this.transform;
+	}	
 	
 	// Update is called once per frame
 	void Update () {
