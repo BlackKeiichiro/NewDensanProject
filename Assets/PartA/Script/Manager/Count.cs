@@ -36,6 +36,7 @@ public class Count : MonoBehaviour {
 				PlayerPrefs.SetInt("Grade",item_manager.Grage);
 				PlayerPrefs.SetInt("Stage",item_manager.StageLevel);
 				Instantiate(Resources.Load("Prefabs/EyeCatch/EyeCatchObj"));
+				Application.LoadLevel("GameMain_partB_2_copy");
 			}
 			escape_ui.text = string.Format("{0:N}\r\n",esc_count).ToString();
 		}
