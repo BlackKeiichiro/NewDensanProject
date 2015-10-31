@@ -31,7 +31,7 @@ public class Boss_Panch : MonoBehaviour {
 	//座標戻す
 	Boss_Move boss_move;
 	
-
+	
 	// Use this for initialization
 	void Start () {
 
@@ -69,7 +69,7 @@ public class Boss_Panch : MonoBehaviour {
 		if(maneger.act){
 
 
-			}
+
 
 		if(act == true){
 
@@ -115,5 +115,7 @@ public class Boss_Panch : MonoBehaviour {
 				}
 				*/
 			}
-	}	
+		
+		}	
+	}
 }

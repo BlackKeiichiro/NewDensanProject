@@ -11,21 +11,13 @@ public class Boss : MonoBehaviour {
 	//基準ＨＰ
 	public int boss_hp_start;
 
-	public int MAX_HP;//最大ＨＰ
-	public float HP = 201;//計算ＨＰ
-//	private float HP_retain;//ＨＰ保持
+	public int MAX_HP = 200;//最大ＨＰ
+	public float HP = 200;//計算ＨＰ
 	public int add_score = 1000;//加算スコア
 
 	public Manager_partB manager;//マネージャスクリプト
 
-	//public Image HP_ber;//HP表示バー
-
 	public float reet;//割合をいれる
-
-	//private Vector2  WandH;//最初のサイズ(widthとHight)
-	//private Vector3 posi;//最初の位置
-
-	//public Risize risize;//ＨＰ画像のリサイズ用
 
 	public AudioSource audio;//オーディオ
 	
@@ -39,19 +31,12 @@ public class Boss : MonoBehaviour {
 		stage = PlayerPrefs.GetInt("Stage");
 		stage += 1;
 		MAX_HP = stage * boss_hp_start;
-		
-		//HPのリセット
-		//HP = HP_retain = MAX_HP;
-		//MAX_HP = HP = GameObject.Find("boss_manager").GetComponent<Boss_manager>().boss_hp;
+		HP = MAX_HP;
 
 		//コンポーネントをゲットする
 		manager = GameObject.Find ("Manager").GetComponent<Manager_partB>();//ゲームマネージャー
-		//risize = HP_ber.GetComponent<Risize>();//リサイズ
 		audio = GameObject.Find("shot_rota").GetComponent<AudioSource>();//オーディオ
 
-		//ＨＰバーの最初のサイズを取得
-	//	WandH = HP_ber.rectTransform.sizeDelta;
-	//	posi = HP_ber.rectTransform.localPosition;
 
 	}
 	

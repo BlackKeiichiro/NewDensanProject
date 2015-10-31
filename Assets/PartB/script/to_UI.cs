@@ -26,7 +26,6 @@ public class to_UI : MonoBehaviour {
 		gread = shot_part.gread;
 		boss_cs = GameObject.Find ("baby").GetComponent<Boss>();
 		boss_hp = boss_cs.HP;
-		boss_hp_max = boss_cs.MAX_HP;
 		heat_max = shot_part.heat_max;
 		heat = shot_part.heat;
 
@@ -35,6 +34,7 @@ public class to_UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		boss_hp_max = boss_cs.MAX_HP;
 		boss_hp = boss_cs.HP;
 		gread = shot_part.gread;
 		heat = shot_part.heat;
