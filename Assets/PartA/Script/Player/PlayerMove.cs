@@ -23,16 +23,20 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float h = Input.GetAxis("Horizontal");
+		float keep = playerX;
 		bike_anim.SetFloat("key",h);
         if (h > 0.1 || h < -0.1)
-			moveDistace = h * Time.deltaTime * 15;
-
+			moveDistace = h * Time.deltaTime * 25;
 		playerX -= moveDistace;
+		if(playerX > 480 || playerX < 340){
+			playerX = keep;
+		}
 		angle += speed * Time.deltaTime % 360;
 		radian = Vector3.right * playerX;
 		rotate_position = Quaternion.AngleAxis(angle,Vector3.up) * radian;
 		this.transform.rotation = Quaternion.Euler(0,Define.PLAYER_FIX_ROTATE + angle,0);
 		this.transform.position = - rotate_position + center;
+		
 	}
 
 
