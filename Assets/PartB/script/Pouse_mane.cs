@@ -19,14 +19,6 @@ public class Pouse_mane : MonoBehaviour {
 		Cursor.visible = false;
 	}
 
-	//スクショ用に消している（本番でも使いませんが）
-	void OnGUI(){
-		if(GUI.Button(new Rect(700,500,120,50),"シーン再読み込み")){
-			GameObject.Find ("boss_manager").SendMessage("stage_add");
-			Application.LoadLevel(0);
-		}
-
-	}
 
 	//ポーズ処理
 	void Pouse(){

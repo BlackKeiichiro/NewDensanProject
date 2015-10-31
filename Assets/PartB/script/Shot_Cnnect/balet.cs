@@ -155,6 +155,13 @@ public class balet : MonoBehaviour {
 				if(vois_delay == 0){
 					AudioSource audio = GameObject.Find("Sound_boss").GetComponent<AudioSource>();
 					audio.PlayOneShot(baby_vois);
+									
+				}
+				//パンチの減速
+				Boss_Panch boss_panch = hit.transform.gameObject.GetComponent<Boss_Panch>();
+				if(boss_panch.act2 == true){
+					boss_panch.hp -= balet_power;
+					boss_panch.reduct ();
 				}
 			}
 		}

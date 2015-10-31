@@ -27,18 +27,23 @@ public class boss_position : MonoBehaviour {
     //ポジションアクト
     public bool p_act = true;
 
+	//ポーズ用
+	Manager_partB manager;
 	// Use this for initialization
 	void Start () {
 	
 		position_yoko = GameObject.Find ("boss_position_yoko");
         position_oku = GameObject.Find ("boss_position_oku");
+
+		manager = GameObject.Find("Manager").GetComponent<Manager_partB>();//ゲーム管理するスクリプトを取得
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//x,yを円で回す
-
-		if(p_act){
+		//ポーズしたら止まる
+		if(p_act == true && manager.act == true){
 			p_x = r * tate_speed * Mathf.Cos(count_tate);
 			p_y = r * tate_speed * Mathf.Sin(count_tate);
 
@@ -57,6 +62,8 @@ public class boss_position : MonoBehaviour {
 
             count_tate += 0.1f * tate_speed;
             count_yoko += 0.1f;
+
+			
 		}
 	}
 }
