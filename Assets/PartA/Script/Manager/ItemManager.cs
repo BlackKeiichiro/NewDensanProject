@@ -12,15 +12,14 @@ public class ItemManager : MonoBehaviour {
 	private float life_keep = 0;
     private float one_gauge = 0.15f;
 	private float damage = 0.11f;
-	private int grade;
+	private int grade = 0;
     private int limit_gauge = 3;
 	private int stage_level;
 	public int StageLevel{get {return stage_level;}}
 	public int Grage{get{return grade;}}
 
-	void Start () {
+	void Awake () {
 		stage_level = PlayerPrefs.GetInt("Stage");
-		grade = PlayerPrefs.GetInt("Grade");
         item_gauge = GameObject.Find("Canvas/Weapon/Gauge").GetComponent<Image>();
 		life_gauge = GameObject.Find("Canvas/Life/LifeGauge").GetComponent<Image>();
         level_ui = GameObject.Find("Canvas/Weapon/Level").GetComponent<Text>();
@@ -42,7 +41,7 @@ public class ItemManager : MonoBehaviour {
 		if(life_switch && life_keep - life_gauge.fillAmount < damage){
 			life_gauge.fillAmount -= 0.01f;
 			if(life_gauge.fillAmount == 0){
-				Debug.Log("GameOver");
+				Application.LoadLevel("Start");
 			}
 		}
 	}
@@ -55,13 +54,6 @@ public class ItemManager : MonoBehaviour {
 	public void ExplosionOnTriggerCall(){
 		life_switch = true;
 		life_keep = life_gauge.fillAmount;
-	}
-    
-	public int GetGrade(){
-		return grade;
-	}
-	public int GetStage(){
-		return stage_level;
 	}
 
 	private string LevelFactory(int level)

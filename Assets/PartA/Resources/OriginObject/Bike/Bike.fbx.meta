@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 2149ec2a5eba54e63ae0fde02dbf4051
+timeCreated: 1446128823
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ane_2:polySurface261
+    100002: //RootNode
+    100004: Bike:polySurface22
+    100006: Bike:polySurface44
+    100008: Bike:polySurface45
+    100010: Bike:polySurface55
+    100012: Bike:polySurface65
+    100014: Bike:polySurface97
+    100016: Bike:polySurface98
+    100018: imouto_fix:Koyomi_hel
+    100020: joint10
+    100022: joint11
+    100024: joint12
+    100026: joint13
+    100028: joint14
+    100030: joint15
+    100032: joint16
+    100034: joint17
+    100036: joint18
+    100038: joint19
+    100040: joint6
+    100042: joint7
+    100044: joint8
+    100046: joint9
+    100048: polySurface302
+    100050: polySurface304
+    100052: polySurface311
+    100054: polySurface315
+    100056: polySurface318
+    100058: polySurface319
+    100060: polySurface320
+    400000: ane_2:polySurface261
+    400002: //RootNode
+    400004: Bike:polySurface22
+    400006: Bike:polySurface44
+    400008: Bike:polySurface45
+    400010: Bike:polySurface55
+    400012: Bike:polySurface65
+    400014: Bike:polySurface97
+    400016: Bike:polySurface98
+    400018: imouto_fix:Koyomi_hel
+    400020: joint10
+    400022: joint11
+    400024: joint12
+    400026: joint13
+    400028: joint14
+    400030: joint15
+    400032: joint16
+    400034: joint17
+    400036: joint18
+    400038: joint19
+    400040: joint6
+    400042: joint7
+    400044: joint8
+    400046: joint9
+    400048: polySurface302
+    400050: polySurface304
+    400052: polySurface311
+    400054: polySurface315
+    400056: polySurface318
+    400058: polySurface319
+    400060: polySurface320
+    2300000: ane_2:polySurface261
+    2300002: Bike:polySurface22
+    2300004: Bike:polySurface44
+    2300006: Bike:polySurface45
+    2300008: Bike:polySurface55
+    2300010: Bike:polySurface65
+    2300012: Bike:polySurface97
+    2300014: Bike:polySurface98
+    2300016: polySurface302
+    2300018: polySurface304
+    2300020: polySurface311
+    2300022: polySurface315
+    2300024: polySurface318
+    2300026: polySurface319
+    2300028: polySurface320
+    3300000: ane_2:polySurface261
+    3300002: Bike:polySurface22
+    3300004: Bike:polySurface44
+    3300006: Bike:polySurface45
+    3300008: Bike:polySurface55
+    3300010: Bike:polySurface65
+    3300012: Bike:polySurface97
+    3300014: Bike:polySurface98
+    3300016: polySurface302
+    3300018: polySurface304
+    3300020: polySurface311
+    3300022: polySurface315
+    3300024: polySurface318
+    3300026: polySurface319
+    3300028: polySurface320
+    4300000: Bike:polySurface97
+    4300002: Bike:polySurface22
+    4300004: polySurface304
+    4300006: polySurface302
+    4300008: Bike:polySurface65
+    4300010: polySurface320
+    4300012: Bike:polySurface45
+    4300014: Bike:polySurface55
+    4300016: Bike:polySurface44
+    4300018: polySurface319
+    4300020: polySurface311
+    4300022: polySurface318
+    4300024: polySurface315
+    4300026: Bike:polySurface98
+    4300028: ane_2:polySurface261
+    7400000: Take 001
+    7400002: Run
+    7400004: Left
+    7400006: Right
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 408
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ane_2:polySurface261
+        weight: 1
+      - path: Bike:polySurface97
+        weight: 1
+      - path: imouto_fix:Koyomi_hel
+        weight: 1
+      - path: joint6
+        weight: 1
+      - path: joint6/Bike:polySurface98
+        weight: 1
+      - path: joint6/joint7
+        weight: 1
+      - path: joint6/joint7/joint8
+        weight: 1
+      - path: joint6/joint7/joint8/Bike:polySurface65
+        weight: 1
+      - path: joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/Bike:polySurface22
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12/polySurface304
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13/polySurface302
+        weight: 1
+      - path: joint6/joint7/polySurface320
+        weight: 1
+      - path: joint6/joint10
+        weight: 1
+      - path: joint6/joint10/Bike:polySurface45
+        weight: 1
+      - path: joint6/joint11
+        weight: 1
+      - path: joint6/joint11/joint14
+        weight: 1
+      - path: joint6/joint11/joint14/Bike:polySurface44
+        weight: 1
+      - path: joint6/joint11/joint15
+        weight: 1
+      - path: joint6/joint11/joint15/Bike:polySurface55
+        weight: 1
+      - path: joint6/joint11/joint16
+        weight: 1
+      - path: joint6/joint11/joint16/joint17
+        weight: 1
+      - path: joint6/joint11/joint16/joint17/polySurface319
+        weight: 1
+      - path: joint6/joint11/joint16/polySurface311
+        weight: 1
+      - path: joint6/joint11/joint18
+        weight: 1
+      - path: joint6/joint11/joint18/joint19
+        weight: 1
+      - path: joint6/joint11/joint18/joint19/polySurface318
+        weight: 1
+      - path: joint6/joint11/joint18/polySurface315
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ane_2:polySurface261
+        weight: 1
+      - path: Bike:polySurface97
+        weight: 1
+      - path: imouto_fix:Koyomi_hel
+        weight: 1
+      - path: joint6
+        weight: 1
+      - path: joint6/Bike:polySurface98
+        weight: 1
+      - path: joint6/joint7
+        weight: 1
+      - path: joint6/joint7/joint8
+        weight: 1
+      - path: joint6/joint7/joint8/Bike:polySurface65
+        weight: 1
+      - path: joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/Bike:polySurface22
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12/polySurface304
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13/polySurface302
+        weight: 1
+      - path: joint6/joint7/polySurface320
+        weight: 1
+      - path: joint6/joint10
+        weight: 1
+      - path: joint6/joint10/Bike:polySurface45
+        weight: 1
+      - path: joint6/joint11
+        weight: 1
+      - path: joint6/joint11/joint14
+        weight: 1
+      - path: joint6/joint11/joint14/Bike:polySurface44
+        weight: 1
+      - path: joint6/joint11/joint15
+        weight: 1
+      - path: joint6/joint11/joint15/Bike:polySurface55
+        weight: 1
+      - path: joint6/joint11/joint16
+        weight: 1
+      - path: joint6/joint11/joint16/joint17
+        weight: 1
+      - path: joint6/joint11/joint16/joint17/polySurface319
+        weight: 1
+      - path: joint6/joint11/joint16/polySurface311
+        weight: 1
+      - path: joint6/joint11/joint18
+        weight: 1
+      - path: joint6/joint11/joint18/joint19
+        weight: 1
+      - path: joint6/joint11/joint18/joint19/polySurface318
+        weight: 1
+      - path: joint6/joint11/joint18/polySurface315
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Right
+      takeName: Take 001
+      firstFrame: 144
+      lastFrame: 196
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ane_2:polySurface261
+        weight: 1
+      - path: Bike:polySurface97
+        weight: 1
+      - path: imouto_fix:Koyomi_hel
+        weight: 1
+      - path: joint6
+        weight: 1
+      - path: joint6/Bike:polySurface98
+        weight: 1
+      - path: joint6/joint7
+        weight: 1
+      - path: joint6/joint7/joint8
+        weight: 1
+      - path: joint6/joint7/joint8/Bike:polySurface65
+        weight: 1
+      - path: joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/Bike:polySurface22
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12/polySurface304
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13/polySurface302
+        weight: 1
+      - path: joint6/joint7/polySurface320
+        weight: 1
+      - path: joint6/joint10
+        weight: 1
+      - path: joint6/joint10/Bike:polySurface45
+        weight: 1
+      - path: joint6/joint11
+        weight: 1
+      - path: joint6/joint11/joint14
+        weight: 1
+      - path: joint6/joint11/joint14/Bike:polySurface44
+        weight: 1
+      - path: joint6/joint11/joint15
+        weight: 1
+      - path: joint6/joint11/joint15/Bike:polySurface55
+        weight: 1
+      - path: joint6/joint11/joint16
+        weight: 1
+      - path: joint6/joint11/joint16/joint17
+        weight: 1
+      - path: joint6/joint11/joint16/joint17/polySurface319
+        weight: 1
+      - path: joint6/joint11/joint16/polySurface311
+        weight: 1
+      - path: joint6/joint11/joint18
+        weight: 1
+      - path: joint6/joint11/joint18/joint19
+        weight: 1
+      - path: joint6/joint11/joint18/joint19/polySurface318
+        weight: 1
+      - path: joint6/joint11/joint18/polySurface315
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Left
+      takeName: Take 001
+      firstFrame: 240
+      lastFrame: 292
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ane_2:polySurface261
+        weight: 1
+      - path: Bike:polySurface97
+        weight: 1
+      - path: imouto_fix:Koyomi_hel
+        weight: 1
+      - path: joint6
+        weight: 1
+      - path: joint6/Bike:polySurface98
+        weight: 1
+      - path: joint6/joint7
+        weight: 1
+      - path: joint6/joint7/joint8
+        weight: 1
+      - path: joint6/joint7/joint8/Bike:polySurface65
+        weight: 1
+      - path: joint6/joint7/joint8/joint9
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/Bike:polySurface22
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint12/polySurface304
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13
+        weight: 1
+      - path: joint6/joint7/joint8/joint9/joint13/polySurface302
+        weight: 1
+      - path: joint6/joint7/polySurface320
+        weight: 1
+      - path: joint6/joint10
+        weight: 1
+      - path: joint6/joint10/Bike:polySurface45
+        weight: 1
+      - path: joint6/joint11
+        weight: 1
+      - path: joint6/joint11/joint14
+        weight: 1
+      - path: joint6/joint11/joint14/Bike:polySurface44
+        weight: 1
+      - path: joint6/joint11/joint15
+        weight: 1
+      - path: joint6/joint11/joint15/Bike:polySurface55
+        weight: 1
+      - path: joint6/joint11/joint16
+        weight: 1
+      - path: joint6/joint11/joint16/joint17
+        weight: 1
+      - path: joint6/joint11/joint16/joint17/polySurface319
+        weight: 1
+      - path: joint6/joint11/joint16/polySurface311
+        weight: 1
+      - path: joint6/joint11/joint18
+        weight: 1
+      - path: joint6/joint11/joint18/joint19
+        weight: 1
+      - path: joint6/joint11/joint18/joint19/polySurface318
+        weight: 1
+      - path: joint6/joint11/joint18/polySurface315
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

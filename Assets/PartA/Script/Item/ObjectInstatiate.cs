@@ -44,6 +44,7 @@ public class ObjectInstatiate : MonoBehaviour {
 	}
 
 	void ObjectUpdate(){
+		int random_sheet = Random.Range(0,20);
 		for(int zoneindex = 0;zoneindex < 6;zoneindex++){
 			GameObject localparent = new GameObject();
 			radian = - rds * Vector3.right; 
@@ -53,7 +54,7 @@ public class ObjectInstatiate : MonoBehaviour {
 			angle += 30;
 			localparent.transform.parent = itemzones[pass_zone].transform;
 			for(int itemindex = 0;itemindex < 5;itemindex++){
-				if(itempattern[0][zoneindex][itemindex] != -1){
+				if(itempattern[random_sheet][zoneindex][itemindex] != -1){
 					GameObject localobject = Instantiate((zoneindex == 0)?kindobject[0]:kindobject[1]) as GameObject;
 					localobject.transform.parent = localparent.transform;
 					localobject.transform.localPosition = new Vector3(item_between[itemindex],createitemsY,0);
