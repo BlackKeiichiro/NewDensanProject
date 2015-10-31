@@ -12,10 +12,16 @@ public class Wapon_HP : MonoBehaviour {
 	public bool missile;
 	public bool laser;
 	public bool panch;
+
+	//レーザー用現在活動してよいかどうか
+	public bool act;
 	
 	// Use this for initialization
 	void Start () {
 		hp = max_hp;
+		if(!laser){
+			act = true;
+		}
 	}
 
 	//耐久値が０になった時の各々の処理
@@ -31,6 +37,9 @@ public class Wapon_HP : MonoBehaviour {
 			GameObject efect = GameObject.Find ("charge");
 			efect.GetComponent<ParticleSystem>().Stop();
 			GameObject.Find ("baby").GetComponent<Boss_Atack>().act2 = false;
+			GameObject.Find ("baby").GetComponent<Animator>().SetTrigger("chanon_break");
+        	GameObject.Find ("boss_position").GetComponent<Boss_Move>().act = true;
+			
 			hp = max_hp;
 		}
 
@@ -44,7 +53,10 @@ public class Wapon_HP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //必要であればレーザが起動前にダメージを受けないように
+        //レーザ用、起動前にダメージを受けないように
+		if(!act){
+			hp = max_hp;
+		}
 
 		//耐久値がなくなれば破壊する
 		if(hp <= 0){

@@ -5,7 +5,13 @@ using System.Collections;
 //仮ボスのスクリプト
 public class Boss : MonoBehaviour {
 
-	public float MAX_HP;//最大ＨＰ
+	//現在のステージを入れる0~2
+	public int stage;
+
+	//基準ＨＰ
+	public int boss_hp_start;
+
+	public int MAX_HP;//最大ＨＰ
 	public float HP = 201;//計算ＨＰ
 //	private float HP_retain;//ＨＰ保持
 	public int add_score = 1000;//加算スコア
@@ -28,10 +34,16 @@ public class Boss : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
+		//ステージ取得
+		stage = PlayerPrefs.GetInt("Stage");
+		stage += 1;
+		MAX_HP = stage * boss_hp_start;
+		
 		//HPのリセット
 		//HP = HP_retain = MAX_HP;
-		MAX_HP = HP = GameObject.Find("boss_manager").GetComponent<Boss_manager>().boss_hp;
+		//MAX_HP = HP = GameObject.Find("boss_manager").GetComponent<Boss_manager>().boss_hp;
+
 		//コンポーネントをゲットする
 		manager = GameObject.Find ("Manager").GetComponent<Manager_partB>();//ゲームマネージャー
 		//risize = HP_ber.GetComponent<Risize>();//リサイズ
@@ -54,10 +66,22 @@ public class Boss : MonoBehaviour {
 			//audio.volume = 0.1f;
 			//壊してスコア加算
 			Destroy(this.gameObject);
-			manager.score += add_score;
-			GameObject.Find ("boss_manager").SendMessage("stage_add");
-			//Application.LoadLevel("GameMain");
-            Application.LoadLevel(0);
+
+			//シーン切り替え
+			if(stage < 3){
+				manager.score += add_score;
+				//	GameObject.Find ("boss_manager").SendMessage("stage_add");
+				PlayerPrefs.SetInt("Stage",stage);
+				//Application.LoadLevel("GameMain");
+				Application.LoadLevel(0);
+
+			}
+			//ゲームクリアで移動とステージ番号を初期化
+			else{
+				PlayerPrefs.DeleteKey ("Stage");
+				Application.LoadLevel("Start");
+			}
+
 
 
 		}

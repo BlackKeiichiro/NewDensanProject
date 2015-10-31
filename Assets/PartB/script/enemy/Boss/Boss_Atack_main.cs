@@ -7,9 +7,10 @@ public class Boss_Atack_main : MonoBehaviour {
 
 	//マネージャーコンポーネント
 	Manager_partB mane;
-    //ボスマネージャーコンポ
-    Boss_manager boss_mane;
 
+	//現在のステージを入れる0~2
+	public int stage;
+	
 	//次に行う攻撃のパターン
 	public int patarn;
 
@@ -24,53 +25,72 @@ public class Boss_Atack_main : MonoBehaviour {
 	public float test;
 
 	//ボスの動きを止めるために
-	boss_position boss_p;
+	Boss_Move boss_p;
     //ボスの動きを止める時間ウェイト
     public int boss_wait_add;
 
 	//それぞれの攻撃スクリプト
 	Boss_Atack lerzer; //レーザー
 	public Boss_Missile_Main missile; //ミサイル
+	Boss_Panch panch; //パンチ
+	
+
+	//ボスのアニメーション切り替え
+	Animator anim ;
 
 
 	// Use this for initialization
 	void Start () {
+		stage = PlayerPrefs.GetInt ("Stage");
+		stage++;
+
 		//コンポーネント
 		mane = GameObject.Find ("Manager").GetComponent<Manager_partB>();
-		boss_mane = GameObject.Find ("boss_manager").GetComponent<Boss_manager>();
-        boss_p = GameObject.Find ("boss_position").GetComponent<boss_position>();
+        boss_p = this.GetComponent<Boss_Move>();
 		lerzer = this.GetComponent<Boss_Atack>();
+		panch = this.GetComponent<Boss_Panch>();
 		missile = GameObject.Find ("Missile_Main").GetComponent<Boss_Missile_Main>();
 
 		atack_point = GameObject.Find ("atack_point");
         boss_wait_add = 30;
+
+		anim = this.GetComponent<Animator>();
 	}
 
 	void Atack(){
 
 		//ミサイルを起動させる
 		if(patarn == 0){
-            missile.max_num = boss_mane.stage * 2;
+            missile.max_num = stage * 2;
+			Debug.Log (stage * 2);
             boss_wait_add = 30;
             missile.act = true;
+			
 
 		}
 		//レーザーを起動させる
 		else if(patarn == 1){
             //レーザーチャージ時間をレベルで決定
             int max;
-            max = (4 - boss_mane.stage) * 180;
+            max = (4 - stage) * 180;
             lerzer.MAX_count = max;
+			Debug.Log (max);
             //ボスの停止時間
-            boss_wait_add = max + 180;
+            boss_wait_add = max + 200;
 			lerzer.act = true;
+			anim.SetTrigger ("chanon");
+			
 
         }
 
 		//パンチを起動させる
 		else{
 
-            boss_wait_add = 30;
+			panch.act = true;
+			panch.hp = (stage-1) * 10 + 20;
+			//panch.hp = 30;
+			Debug.Log ((stage-1) * 10 + 20);
+            boss_wait_add = 500;
 
         }
 
@@ -78,12 +98,15 @@ public class Boss_Atack_main : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //int count = mane.time;
+
+		if(mane.act){
+
+			
 
         //攻撃後、一定数でボスを動かしてカウントを止める
         if (count == wait + boss_wait_add)
         {
-            boss_p.p_act = true;
+            boss_p.act = true;
             count = 0;
         }
 
@@ -100,16 +123,25 @@ public class Boss_Atack_main : MonoBehaviour {
 			act = true;
 
 		}
+
+		//次の攻撃がミサイルの時に前もってアニメーションを起動する
+		if(patarn == 0 && count == wait - 190){
+			anim.SetTrigger ("missile");
+			
+		}
+
 		//一度だけ呼ぶため？（必要ないかも）
 		if(act == true){
             //一定範囲のときにこうげき
-			if(Mathf.Abs(atack_point.transform.position.x - this.transform.position.x) < 2){
+			//if(Mathf.Abs(atack_point.transform.position.x - this.transform.position.x) < 2){
+				if(boss_p.Initial_Juge() == true){
 				act = false;
-				boss_p.p_act = false;
+				boss_p.act = false;
 				Atack ();
-			
-			//	patarn = (patarn+1) %3;
+				patarn = (patarn+1) %3;
 			}
+		}
+
 		}
 
 

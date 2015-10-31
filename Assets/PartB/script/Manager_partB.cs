@@ -26,13 +26,15 @@ public class Manager_partB : MonoBehaviour {
 
 	Pouse_mane pouse;//ポーズのスクリプト
 
+	GameObject tower;
+
 	// Use this for initialization
 	void Start () {
 
 		//初期スコアの表示
 		//score_text.text = "SCORE:"+score_retain;
 		pouse = this.GetComponent<Pouse_mane>();
-
+		tower = GameObject.Find ("Tower");
 	}
 
 	// Update is called once per frame
@@ -66,6 +68,8 @@ public class Manager_partB : MonoBehaviour {
 			//score_text.text = "SCORE:"+score_retain;
 		}
 
+		tower.transform.Rotate(new Vector3(0,1f,0),-1f);
+		
 
 	}
 }

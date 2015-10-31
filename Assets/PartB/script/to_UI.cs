@@ -24,9 +24,9 @@ public class to_UI : MonoBehaviour {
 		//取得
 		shot_part = GameObject.Find ("shot_rota").GetComponent<shot_part8>();
 		gread = shot_part.gread;
-		boss_hp_max = GameObject.Find ("boss_manager").GetComponent<Boss_manager>().boss_hp;
 		boss_cs = GameObject.Find ("baby").GetComponent<Boss>();
 		boss_hp = boss_cs.HP;
+		boss_hp_max = boss_cs.MAX_HP;
 		heat_max = shot_part.heat_max;
 		heat = shot_part.heat;
 

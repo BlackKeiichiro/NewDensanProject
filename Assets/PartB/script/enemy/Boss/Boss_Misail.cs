@@ -19,11 +19,16 @@ public class Boss_Misail : MonoBehaviour {
 
 	Rigidbody rigi;//リジッドボディ
 
+	Manager_partB manager;
+
 	// Use this for initialization
 	void Start () {
 		rigi = this.GetComponent<Rigidbody>();
 		camera = GameObject.FindWithTag ("Player");
 		child_missil_collider = transform.FindChild("missile").gameObject.GetComponent<Collider>();
+	
+		manager = GameObject.Find("Manager").GetComponent<Manager_partB>();//ゲーム管理するスクリプトを取得
+	
 	}
 	
 	// Update is called once per frame
@@ -57,9 +62,16 @@ public class Boss_Misail : MonoBehaviour {
 
 			}
 
+			if(manager.act){
+
 			//力を加えて飛ばす
 			rigi.AddForce(this.transform.forward * 0.05f,ForceMode.Impulse);
 			
+			}
+			else
+				//一度動きを止める
+				rigi.velocity = Vector3.zero;
+
 		}
 
 	}

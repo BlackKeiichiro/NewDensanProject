@@ -15,10 +15,19 @@ public class Test : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shot = GameObject.FindWithTag("Player");
-		baby = GameObject.Find("bay");
+	//	baby = GameObject.Find("bay");
 		shot_part = shot.GetComponent<shot_part8>();
 
 		audio = GameObject.Find("Sound_boss").GetComponent<AudioSource>();
+		
+	}
+
+	//スクショ用に消している（本番でも使いませんが）
+	void OnGUI(){
+		if(GUI.Button(new Rect(700,500,120,50),"シーン再読み込み")){
+			GameObject.Find ("boss_manager").SendMessage("stage_add");
+			Application.LoadLevel(0);
+		}
 		
 	}
 	
@@ -41,7 +50,7 @@ public class Test : MonoBehaviour {
 			shot_part.gread_count += 10;
 		}
 	//せっかくなので回転さあせてみた
-	//baby.transform.Rotate(new Vector3(0,1f,0),5f);
+	baby.transform.Rotate(new Vector3(0,1f,0),-1f);
 
 
 	}

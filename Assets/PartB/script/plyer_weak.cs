@@ -21,10 +21,13 @@ public class plyer_weak : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider coll){
-		if(coll.gameObject.tag == "enemy"){
+		if(coll.gameObject.tag == "enemy" || coll.gameObject.tag =="boss"){
 			//暗転させる
 			panel.color = brack;
+			PlayerPrefs.DeleteKey ("Stage");
+			Application.LoadLevel("Start");
 			//Debug.Break ();
+			//ゲームオーバー処理
 		}
 	}
 }
