@@ -12,8 +12,9 @@ public class Missile : MonoBehaviour {
 	void Start () {
 		_rigidbody = this.GetComponent<Rigidbody>();
 		missileSE = Resources.Load("Sound/bomb_fall") as AudioClip;
-		SEobj = AudioSource.Instantiate(missileSE,this.transform.position,this.transform.rotation) as GameObject;
-		SEobj.transform.parent = this.transform;
+		AudioSource.PlayClipAtPoint(missileSE,this.transform.position,0.3f);
+		//SEobj = AudioSource.Instantiate(missileSE,this.transform.position,this.transform.rotation) as GameObject;
+		//SEobj.transform.parent = this.transform;
 	}	
 	
 	// Update is called once per frame

@@ -13,10 +13,11 @@ public class PartAManager : MonoBehaviour {
     public bool gauge_switch = false;
 	public float _magnitude;
 	public int[,,] patternlist;
-
+	private int screenW = 1280;
+	private int screenH = 720;
 	// Use this for initialization
-	void Start () {
-	    
+	void Awake () {
+		Screen.SetResolution(screenW,screenH,false);
 	}
 	
 	// Update is called once per frame

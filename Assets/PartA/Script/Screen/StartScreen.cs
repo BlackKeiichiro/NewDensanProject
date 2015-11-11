@@ -16,6 +16,7 @@ public class StartScreen : MonoBehaviour {
 	public void BottunClick(string Bname){
 		switch(Bname){
 		case "start":
+			PlayerPrefs.SetInt("Stage",0);
 			Application.LoadLevel("GameMain1");
 			break;
 		case "exit":

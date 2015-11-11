@@ -7,7 +7,7 @@ using System.Collections;
 public class plyer_weak : MonoBehaviour {
 
 	public Image panel;
-	Color pell = new Color(30,30,30,0);
+	//Color pell = new Color(30,30,30,0);
 	Color brack = new Color(0,0,0,0.5f);
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class plyer_weak : MonoBehaviour {
 	void OnTriggerEnter(Collider coll){
 		if(coll.gameObject.tag == "enemy" || coll.gameObject.tag =="boss"){
 			//暗転させる
-			panel.color = brack;
+			//panel.color = brack;
 			PlayerPrefs.DeleteKey ("Stage");
 			Application.LoadLevel("Start");
 			//Debug.Break ();

@@ -8,7 +8,7 @@ public class Count : MonoBehaviour {
 	private Text escape_ui;
 	private float dcount = 0.0f;
 	private float esc_count;
-	private float[] esc_counts = new float[3]{10,160,220};
+	private float[] esc_counts = new float[3]{60,80,100};
 	private bool finish_flag = false;
 	private GameObject manager;
 	private ItemManager item_manager;

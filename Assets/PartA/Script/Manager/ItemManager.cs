@@ -10,7 +10,7 @@ public class ItemManager : MonoBehaviour {
 	private bool life_switch = false;
     private float item_keep = 0;
 	private float life_keep = 0;
-    private float one_gauge = 0.15f;
+    private float one_gauge = 0.251f;
 	private float damage = 0.11f;
 	private int grade = 0;
     private int limit_gauge = 3;
@@ -41,6 +41,7 @@ public class ItemManager : MonoBehaviour {
 		if(life_switch && life_keep - life_gauge.fillAmount < damage){
 			life_gauge.fillAmount -= 0.01f;
 			if(life_gauge.fillAmount == 0){
+				PlayerPrefs.SetInt("Stage",0);
 				Application.LoadLevel("Start");
 			}
 		}

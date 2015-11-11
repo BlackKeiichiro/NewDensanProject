@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
         if (h > 0.1 || h < -0.1)
 			moveDistace = h * Time.deltaTime * 25;
 		playerX -= moveDistace;
-		if(playerX > 480 || playerX < 340){
+		if(playerX > 475 || playerX < 350){
 			playerX = keep;
 		}
 		angle += speed * Time.deltaTime % 360;
