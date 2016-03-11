@@ -58,13 +58,15 @@ public class Boss : MonoBehaviour {
 				//	GameObject.Find ("boss_manager").SendMessage("stage_add");
 				PlayerPrefs.SetInt("Stage",stage);
 				//Application.LoadLevel("GameMain");
-				Application.LoadLevel("GameMain1");
+				PlayerPrefs.SetInt("Scene",2);
+				Application.LoadLevel(1);
 
 			}
 			//ゲームクリアで移動とステージ番号を初期化
 			else{
 				PlayerPrefs.DeleteKey ("Stage");
-				Application.LoadLevel("Start");
+				PlayerPrefs.SetInt("Scene",0);
+				Application.LoadLevel(1);
 			}
 
 

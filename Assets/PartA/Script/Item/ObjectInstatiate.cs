@@ -13,6 +13,7 @@ public class ObjectInstatiate : MonoBehaviour {
 	private float[] item_between = new float[5]{50,20,-10,-40,-65};
 	private GameObject[] itemzones;
 	private GameObject[] kindobject;
+	private ItemManager item_manager;
 	private int[][][] itempattern;
 	private string path = "Pattern/patternlist.xlsx";
 	public bool shiftzone = false;
@@ -25,6 +26,7 @@ public class ObjectInstatiate : MonoBehaviour {
 			this.transform.FindChild("ItemzoneRight").gameObject,
 			this.transform.FindChild("ItemzoneLeft").gameObject
 		};
+		item_manager = GameObject.Find("Manager").GetComponent<ItemManager>();
 		kindobject = new GameObject[]{
 			Resources.Load("Prefabs/Item") as GameObject,
 			Resources.Load("Prefabs/ExplosionAOE") as GameObject

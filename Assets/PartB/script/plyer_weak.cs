@@ -25,7 +25,8 @@ public class plyer_weak : MonoBehaviour {
 			//暗転させる
 			//panel.color = brack;
 			PlayerPrefs.DeleteKey ("Stage");
-			Application.LoadLevel("Start");
+			PlayerPrefs.SetInt("Scene",0);
+			Application.LoadLevel(0);
 			//Debug.Break ();
 			//ゲームオーバー処理
 		}

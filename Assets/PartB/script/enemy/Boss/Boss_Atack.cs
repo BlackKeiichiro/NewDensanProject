@@ -89,7 +89,8 @@ public class Boss_Atack : MonoBehaviour {
 				Destroy(beam_efect);
 				anim.SetTrigger ("chanon_finish");
 				PlayerPrefs.DeleteKey ("Stage");
-				Application.LoadLevel("Start");
+				PlayerPrefs.SetInt("Scene",0);
+				Application.LoadLevel(1);
 				//ゲームオーバー処理
 			}
 

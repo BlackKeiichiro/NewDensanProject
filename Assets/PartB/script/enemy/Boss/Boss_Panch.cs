@@ -92,7 +92,8 @@ public class Boss_Panch : MonoBehaviour {
 
 				if(count > 0.6){
 				PlayerPrefs.DeleteKey ("Stage");
-				Application.LoadLevel("Start");
+				PlayerPrefs.SetInt("Scene",0);	
+				Application.LoadLevel(0);
 			}
 
 			}

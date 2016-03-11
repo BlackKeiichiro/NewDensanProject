@@ -47,11 +47,10 @@ public class PlayerControl : MonoBehaviour {
 			uicount.text = "";
 		}
 	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
-		//DownRayhitToStage();
 		ScreenOutCounter();
-
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 		_velocity = new Vector3(h , 0 , v);
@@ -61,7 +60,6 @@ public class PlayerControl : MonoBehaviour {
 			v = h = 0;
 		else
 			_velocity *= Time.deltaTime * 5;
-        //this.transform.localPosition -= Vector3.back*0.05f; 
 		
 		if((h != 0 || v != 0)){
 			this.transform.localPosition += _velocity;

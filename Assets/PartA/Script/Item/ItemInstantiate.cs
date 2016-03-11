@@ -5,7 +5,8 @@ using Excel;
 
 public class ItemInstantiate : MonoBehaviour {
 	private int[][][] patternlist;
-	private string filepath = "Pattern/patternlist.xlsx";
+	private string filepath = "/data/app/com.densan_project/Resources/Pattern/patternlist.xlsx";
+//	private string filepath = "/Pattern/patternlist.xlsx";
 	private GameObject[] type_items;
 	private List<Transform> itemzone_child = new List<Transform>();
 	//public Item[] instant_items;

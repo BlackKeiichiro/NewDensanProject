@@ -4,7 +4,7 @@ using System.Collections;
 
 public class WeaponItem : Item {
     private AudioClip getitemSE;
-	private float fix_itemY = 2; 
+	private float fix_itemY = 3.5f; 
 	protected override void Start () {
 		PositionLock(fix_itemY);
         getitemSE = Resources.Load("Sound/item_bike") as AudioClip;

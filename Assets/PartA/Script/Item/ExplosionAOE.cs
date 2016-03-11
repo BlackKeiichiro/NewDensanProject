@@ -8,7 +8,7 @@ public class ExplosionAOE : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("player");
+		player = GameObject.Find("Player");
 		mark = this.transform.FindChild("Mark").gameObject;
 	}
 	
