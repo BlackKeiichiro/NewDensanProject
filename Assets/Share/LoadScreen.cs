@@ -22,9 +22,4 @@ public class LoadScreen : MonoBehaviour {
 		while(!async.isDone);
 		yield return new WaitForSeconds(1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections;
 
-public class InstantiateObject :EditorWindow{
+public class InstantiateObject : EditorWindow{
 	[MenuItem("Window/InstantiateObject")]
 	static void Init() {
 		EditorWindow.GetWindow<InstantiateObject>(true, "InstantiateObject");

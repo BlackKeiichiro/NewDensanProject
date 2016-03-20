@@ -18,12 +18,14 @@ public class PlayerMove : MonoBehaviour {
 	private GameObject player;
 	private GameObject bike;
 	private ItemManager manager;
+
 	// Use this for initialization
 	void Start () {
 		bike = this.transform.FindChild("Bike").gameObject;
 		manager = GameObject.Find("Manager").GetComponent<ItemManager>();
 		bike_anim = bike.GetComponent<Animator>();
         center = new Vector3(0,-3.8f,0);
+
 	}
 	
 	// Update is called once per frame

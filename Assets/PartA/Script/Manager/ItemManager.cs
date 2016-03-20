@@ -20,24 +20,28 @@ public class ItemManager : MonoBehaviour {
 	private int stage_level;
 
 	//Item GameObject
-	private int pass_zone = 1;
-	private int[][][] itempattern;
-	private float rds = 400;
-	private float player_mv_center = 400;
-	private float player_mv_space = 168;
+	private int cleanitemcount = 0;
+
+	private ExcelData exceldata;
 	private float angle = 0;
 	private float createitemsY = -3.0f;
+	private float player_mv_center = 400;
+	private float player_mv_space = 168;
+	private float rds = 400;
 	private float[] item_between = new float[5]{50,20,-10,-40,-65};
+	private GameObject[] itemzones;
+	private GameObject[] kindobject;
+	private GameObject[] shiftzones;
+	private GameObject[,] cleanitems;
+	private GameObject tower;
+	private int pass_zone = 1;
+	private int[][][] item_pattern;
+	private PlayerMove playermv;
 	private Vector3 radian;
 	private Vector3 center;
 	private Vector3 rotate_position;
-	private GameObject[] shiftzones;
-	private GameObject[] kindobject;
-	private GameObject[] itemzones;
-	private List<GameObject> cleanitems = new List<GameObject>();
-	private GameObject tower;
-	private PlayerMove playermv;
-	private string path = "Pattern/patternlist.xlsx";
+	//private LoadPatternList load_list;
+	//private string path = "Resources/Pattern/patternlist.xlsx";
 	private	bool startflag = false;
 	public bool shiftzone_flag = false;
 	//Getter
@@ -45,6 +49,7 @@ public class ItemManager : MonoBehaviour {
 	public int Grage{get{return grade;}}
 
 	void Awake () {
+		cleanitems = new GameObject[2,6];
 		//UI Initialize
 		stage_level = PlayerPrefs.GetInt("Stage");
         item_gauge = GameObject.Find("Canvas/Weapon/Gauge").GetComponent<Image>();
@@ -53,31 +58,35 @@ public class ItemManager : MonoBehaviour {
 		//Item Initialize
 		playermv = GameObject.Find("Player").GetComponent<PlayerMove>();
 		kindobject = new GameObject[]{
-			Resources.Load("Prefabs/Item") as GameObject,
-			Resources.Load("Prefabs/ExplosionAOE") as GameObject
+			Resources.Load<GameObject>("Prefabs/Item"),
+			Resources.Load<GameObject>("Prefabs/ExplosionAOE")
 		};
+		exceldata = Resources.Load("Pattern/patternlist") as ExcelData;
+		foreach(_Row cells in  exceldata.sheet){
+			foreach(_Cell test in cells.row){
+				for(int i = 0;i < 5;i++)
+					Debug.Log(test.cell[i]);
+			}
+		}
 		tower = GameObject.Find("Tower");
-
 	}
 
 	void Start(){
-		angle = playermv.get_angle + 30;
-		itempattern = PatternLoad.ReadExcelPattern(path);
+		angle = playermv.get_angle + 60;
+		//item_pattern = exceldata.data;
 		center = Vector3.zero;
 	}
 
 	void Update () {
 		ItemGaugeEffect();
-		KeyCheckInit();
-		if(startflag){
-			CleanZoneChild();
-		}
+		EventCheckInit();
+		CleanZoneChild();
 	}
 	//One zone's child is destroyed.
 	void CleanZoneChild(){
 		if(shiftzone_flag){
-			foreach(GameObject cleanitem in cleanitems){
-				Destroy(cleanitem);
+			for(int itemindex = 0;itemindex < cleanitems.GetLength(1);itemindex++){
+				Destroy(cleanitems[pass_zone,itemindex]);
 			}
 			ObjectUpdate();
 			shiftzone_flag = false;
@@ -118,13 +127,12 @@ public class ItemManager : MonoBehaviour {
         item_keep = item_gauge.fillAmount;
     }
 
-	void KeyCheckInit(){
+	void EventCheckInit(){
 		if(Input.GetKeyDown(KeyCode.Space) && !startflag){
 			shiftzones = new GameObject[]{
 				ZoneInstantiate(angle),
 				ZoneInstantiate(180 + angle)
-				//GameObject.Find("Tower/ItemzoneRight").gameObject,
-				//GameObject.Find("Tower/ItemzoneLeft").gameObject
+
 			};
 			foreach(GameObject shiftzone in shiftzones){
 				shiftzone.transform.tag = "zone";
@@ -162,21 +170,21 @@ public class ItemManager : MonoBehaviour {
 		int random_sheet = Random.Range(0,20);
 		for(int zoneindex = 0;zoneindex < 6;zoneindex++){
 			GameObject localparent = new GameObject();
-			//localparent.transform.parent = itemzones[pass_zone].transform;
 			radian = - rds * Vector3.right; 
 			rotate_position = Quaternion.AngleAxis(angle,Vector3.up) * radian;
 			localparent.transform.position = center + rotate_position;
 			localparent.transform.rotation = Quaternion.Euler(Vector3.up * (Define.PLAYER_FIX_ROTATE + angle));
 			angle += 30;
-			//localparent.transform.parent = itemzones[pass_zone].transform;
-			for(int itemindex = 0;itemindex < 5;itemindex++){
-				if(itempattern[random_sheet][zoneindex][itemindex] != -1){
-					GameObject localobject = Instantiate((zoneindex == 0)?kindobject[0]:kindobject[1]) as GameObject;
+			cleanitems[pass_zone,zoneindex] = localparent;
+			int itemindex = 0;
+			foreach(int cell in exceldata.sheet[random_sheet].row[zoneindex].cell){
+				if(cell != -1){
+					GameObject localobject = Instantiate((cell == 0)?kindobject[0]:kindobject[1]) as GameObject;
 					localobject.transform.parent = localparent.transform;
 					localobject.transform.localPosition = new Vector3(item_between[itemindex],createitemsY,0);
 				}
+				itemindex++;
 			}
-			//cleanitems.Add(localparent);
 		}
 		pass_zone = (pass_zone == 0)?1:0;
 	}

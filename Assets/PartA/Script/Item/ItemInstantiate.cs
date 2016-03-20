@@ -5,14 +5,14 @@ using Excel;
 
 public class ItemInstantiate : MonoBehaviour {
 	private int[][][] patternlist;
-	private string filepath = "/data/app/com.densan_project/Resources/Pattern/patternlist.xlsx";
+//	private string filepath = "/data/app/com.densan_project/Resources/Pattern/patternlist.xlsx";
 //	private string filepath = "/Pattern/patternlist.xlsx";
 	private GameObject[] type_items;
 	private List<Transform> itemzone_child = new List<Transform>();
 	//public Item[] instant_items;
     
 	void Awake(){
-		patternlist = PatternLoad.ReadExcelPattern(filepath);
+		patternlist = Resources.Load<LoadPatternList>("Pattern/LoadPatternList").data;
 		foreach(Transform child in this.transform){
 			itemzone_child.Add(child);
 		}
