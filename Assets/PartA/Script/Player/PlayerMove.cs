@@ -3,10 +3,9 @@ using System;
 using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
-	public float get_angle{get{return angle;}}
-
 	private float angle = -30;//210;
 	private float speed = 20;
+	private float horizon_speed = 25;
 	private float moveDistace;
 	private float maxDistance = 475;
 	private float minDistance = 350;
@@ -19,6 +18,7 @@ public class PlayerMove : MonoBehaviour {
 	private GameObject bike;
 	private ItemManager manager;
 
+	public float get_angle{get{return angle;}}
 	// Use this for initialization
 	void Start () {
 		bike = this.transform.FindChild("Bike").gameObject;
@@ -39,12 +39,7 @@ public class PlayerMove : MonoBehaviour {
 		//Input Horizontal
         if (h > 0.1 || h < -0.1){
 			//Nomal Move
-			moveDistace = h * Time.deltaTime * 25;
-
-			//Quick Escape
-			if(Input.GetKeyDown(KeyCode.Space)){
-				moveDistace += 200 * h * Time.deltaTime;
-			}
+			moveDistace = h * Time.deltaTime * horizon_speed;
 		}
 		playerX -= moveDistace;
 		if(playerX > maxDistance || playerX < minDistance){

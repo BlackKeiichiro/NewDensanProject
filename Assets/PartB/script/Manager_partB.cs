@@ -42,8 +42,8 @@ public class Manager_partB : MonoBehaviour {
 
 		act = pouse.act;
 
-		screen_width = Screen.width; //画面横サイズ
-		screen_height = Screen.height ;//画面縦サイズ
+		//screen_width = Screen.width; //画面横サイズ
+		//screen_height = Screen.height ;//画面縦サイズ
 
 		//時間のカウント
 		time += Time.deltaTime;

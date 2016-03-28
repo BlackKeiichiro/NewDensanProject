@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Excel;
 
 public class ItemManager : MonoBehaviour {
+	private Count count;
 	//Item UI
     private Image item_gauge;
 	private Image life_gauge;
@@ -20,8 +21,7 @@ public class ItemManager : MonoBehaviour {
 	private int stage_level;
 
 	//Item GameObject
-	private int cleanitemcount = 0;
-
+	private	bool gamestartflag = false;
 	private ExcelData exceldata;
 	private float angle = 0;
 	private float createitemsY = -3.0f;
@@ -40,9 +40,6 @@ public class ItemManager : MonoBehaviour {
 	private Vector3 radian;
 	private Vector3 center;
 	private Vector3 rotate_position;
-	//private LoadPatternList load_list;
-	//private string path = "Resources/Pattern/patternlist.xlsx";
-	private	bool startflag = false;
 	public bool shiftzone_flag = false;
 	//Getter
 	public int StageLevel{get {return stage_level;}}
@@ -50,6 +47,7 @@ public class ItemManager : MonoBehaviour {
 
 	void Awake () {
 		cleanitems = new GameObject[2,6];
+		count = this.GetComponent<Count>();
 		//UI Initialize
 		stage_level = PlayerPrefs.GetInt("Stage");
         item_gauge = GameObject.Find("Canvas/Weapon/Gauge").GetComponent<Image>();
@@ -62,18 +60,7 @@ public class ItemManager : MonoBehaviour {
 			Resources.Load<GameObject>("Prefabs/ExplosionAOE")
 		};
 		exceldata = Resources.Load("Pattern/patternlist") as ExcelData;
-		foreach(_Row cells in  exceldata.sheet){
-			foreach(_Cell test in cells.row){
-				for(int i = 0;i < 5;i++)
-					Debug.Log(test.cell[i]);
-			}
-		}
 		tower = GameObject.Find("Tower");
-	}
-
-	void Start(){
-		angle = playermv.get_angle + 60;
-		//item_pattern = exceldata.data;
 		center = Vector3.zero;
 	}
 
@@ -82,6 +69,7 @@ public class ItemManager : MonoBehaviour {
 		EventCheckInit();
 		CleanZoneChild();
 	}
+
 	//One zone's child is destroyed.
 	void CleanZoneChild(){
 		if(shiftzone_flag){
@@ -92,7 +80,8 @@ public class ItemManager : MonoBehaviour {
 			shiftzone_flag = false;
 		}
 	}
-		
+
+	//when player is damaged,player's life  is down.
 	public void ExplosionOnTriggerCall(){
 		life_switch = true;
 		life_keep = life_gauge.fillAmount;
@@ -127,8 +116,11 @@ public class ItemManager : MonoBehaviour {
         item_keep = item_gauge.fillAmount;
     }
 
+	//First Object Instatiate, Timing Free.(Now Key Down Space)
 	void EventCheckInit(){
-		if(Input.GetKeyDown(KeyCode.Space) && !startflag){
+		if(/*Input.GetKeyDown(KeyCode.Space) && */!gamestartflag){
+			angle = playermv.get_angle + 60;
+			count.switch_flag = false;
 			shiftzones = new GameObject[]{
 				ZoneInstantiate(angle),
 				ZoneInstantiate(180 + angle)
@@ -141,7 +133,7 @@ public class ItemManager : MonoBehaviour {
 				shiftzone.GetComponent<BoxCollider>().isTrigger = true;
 			}
 			ObjectUpdate();
-			startflag = true;
+			gamestartflag = true;
 		}
 	}
 
@@ -165,7 +157,7 @@ public class ItemManager : MonoBehaviour {
         }
         return kanji_level;
     }
-
+		
 	void ObjectUpdate(){
 		int random_sheet = Random.Range(0,20);
 		for(int zoneindex = 0;zoneindex < 6;zoneindex++){
@@ -188,6 +180,7 @@ public class ItemManager : MonoBehaviour {
 		}
 		pass_zone = (pass_zone == 0)?1:0;
 	}
+
 
 	private GameObject ZoneInstantiate(float _angle){
 		GameObject zone = new GameObject();

@@ -4,7 +4,8 @@ using System.Collections;
 
 //仮ボスのスクリプト
 public class Boss : MonoBehaviour {
-
+	//Debug時にtrue
+	public bool debug_flag = true;
 	//現在のステージを入れる0~2
 	public int stage;
 
@@ -53,7 +54,7 @@ public class Boss : MonoBehaviour {
 			Destroy(this.gameObject);
 
 			//シーン切り替え
-			if(stage < 3){
+			if(stage < 3 && !debug_flag){
 				manager.score += add_score;
 				//	GameObject.Find ("boss_manager").SendMessage("stage_add");
 				PlayerPrefs.SetInt("Stage",stage);
