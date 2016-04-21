@@ -62,6 +62,9 @@ public class ItemManager : MonoBehaviour {
 		exceldata = Resources.Load("Pattern/patternlist") as ExcelData;
 		tower = GameObject.Find("Tower");
 		center = Vector3.zero;
+		//if(stage_level > 0){
+			gamestartflag = true;
+		//}
 	}
 
 	void Update () {
@@ -118,9 +121,9 @@ public class ItemManager : MonoBehaviour {
 
 	//First Object Instatiate, Timing Free.(Now Key Down Space)
 	void EventCheckInit(){
-		if(/*Input.GetKeyDown(KeyCode.Space) && */!gamestartflag){
+		if(/*Input.GetKeyDown(KeyCode.Space) && */gamestartflag){
 			angle = playermv.get_angle + 60;
-			count.switch_flag = false;
+			count.SetSwitch();
 			shiftzones = new GameObject[]{
 				ZoneInstantiate(angle),
 				ZoneInstantiate(180 + angle)
@@ -133,7 +136,7 @@ public class ItemManager : MonoBehaviour {
 				shiftzone.GetComponent<BoxCollider>().isTrigger = true;
 			}
 			ObjectUpdate();
-			gamestartflag = true;
+			gamestartflag = false;
 		}
 	}
 
@@ -190,5 +193,9 @@ public class ItemManager : MonoBehaviour {
 		zone.transform.rotation = Quaternion.Euler(Vector3.up * (Define.PLAYER_FIX_ROTATE +_angle));
 		zone.transform.position = rotate_position + center;
 		return zone;
+	}
+
+	public void TutorialEnd(){
+		gamestartflag = true;
 	}
 }

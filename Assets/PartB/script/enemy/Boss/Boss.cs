@@ -5,7 +5,7 @@ using System.Collections;
 //仮ボスのスクリプト
 public class Boss : MonoBehaviour {
 	//Debug時にtrue
-	public bool debug_flag = true;
+	public bool debug_flag = false;
 	//現在のステージを入れる0~2
 	public int stage;
 
@@ -29,8 +29,7 @@ public class Boss : MonoBehaviour {
 	void Start () {
 		
 		//ステージ取得
-		stage = PlayerPrefs.GetInt("Stage");
-		stage += 1;
+		stage = PlayerPrefs.GetInt("Stage") + 1;
 		MAX_HP = stage * boss_hp_start;
 		HP = MAX_HP;
 
@@ -54,7 +53,8 @@ public class Boss : MonoBehaviour {
 			Destroy(this.gameObject);
 
 			//シーン切り替え
-			if(stage < 3 && !debug_flag){
+			if(stage < 3){
+				Debug.Log(stage);
 				manager.score += add_score;
 				//	GameObject.Find ("boss_manager").SendMessage("stage_add");
 				PlayerPrefs.SetInt("Stage",stage);
